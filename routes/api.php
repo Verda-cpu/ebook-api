@@ -31,3 +31,7 @@ Route::post('books', [BookController::class, 'store']);
 Route::get('books/{id}', [BookController::class, 'show']);
 Route::put('books/{id}', [BookController::class, 'update']);
 Route::delete('books/{id}', [BookController::class, 'destroy']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/me', [AuthController::class, 'me']);
+Route::post('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
